@@ -2,6 +2,9 @@ import json
 from json_utils import create_corpus, create_json
 
 def main():
+
+    ####*****************ILLUSTRATIVE EXAMPLE OF INPUT FILE*****************###
+    # This is only an example to show the data structure required by the create_corpus function. This section (till "ILLUSTRATIVE EXAMPLE ENDS" can be deleted or replaced by your own dict creation function)
     with open('..//problems.json','r',encoding='utf-8') as f:
         dataset = json.load(f)
 
@@ -25,11 +28,14 @@ def main():
     for key, val in dict_qa.items():
         print(f'Key: {key}\nValue:{val}')
         break
-    print('\n\n\n\n',dict_qa)
     with open('qa_json.json','w', encoding='utf-8') as fo:
         json.dump(dict_qa,fo)
 
-    content = create_corpus(dict_qa)
+    ####*****************ILLUSTRATIVE EXAMPLE ENDS*****************###
+        
+    with open('qa_json.json','r', encoding='utf-8') as fi: #Name your input json file as qa_json.json or change the name pf the file in this line appropriately
+        dict_sample = json.load(fi)
+    content = create_corpus(dict_sample)
     create_json(content)
 
 if __name__ == "__main__":
