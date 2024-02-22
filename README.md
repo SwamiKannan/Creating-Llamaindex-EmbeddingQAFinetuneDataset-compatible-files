@@ -1,5 +1,7 @@
 # Creating EmbeddingQAFinetuneDataset.from_json() compatible json file
-
+<p align = "center">
+  <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-for-Finetuning-Embeddings/blob/main/cover.png", width = 60%>
+</p>
 An important activity to improve RAG performance is to finetune the embeddings model itself to suit the domain that your RAG would capture the data of. LlamaIndex provides a robust library called llama_index.finetuning to accomplish this.
 For this library to work, we have to instantiate a EmbeddingQAFinetuneDataset object from our data. This is required in  a json file of a specific format. 
 
