@@ -18,6 +18,8 @@ All guides (including the llamaindex documentation) create question - reference 
 </li>
 </ol>
 Hence, this code converts a standard dictionary (in a provided format) containing question / answers or question / context details into a json file that can be used to finetune your embedding model using LlamaIndex's finetune library
+
+## Image credits:
 <sub>
  Image credit:Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a>
  Prompt: cinematic film still, 4k, realistic, of a man casting spells on documents, Fujifilm XT3, long shot, ((low light:1.4)), landscape , very wide angle shot, somber, vignette, highly detailed, high budget Hollywood movie, bokeh, cinemascope, moody, epic, neon, gorgeous, film grain, grainy
