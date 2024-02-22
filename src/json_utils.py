@@ -39,6 +39,7 @@ def create_corpus(qa_items):
     corpus_check={}
     content = []
     index = list(qa_items.keys())
+    print('Index length', len(index))
     for i in index:
         uiud_q, uiud_r = 0 , 0
         while  uiud_q in all_ids:
@@ -46,7 +47,8 @@ def create_corpus(qa_items):
         all_ids.append(uiud_q)
         question = qa_items[i]['Question']
         answer  = qa_items[i]['Reference']
-        corpora_id = random.sample(index[:i]+index[i+1:],NUMBER_OF_CORPUS_ANSWERS)
+        slice = index[:int(i)]+index[int(i)+1:] if int(i)>0 else index[int(i)+1:]
+        corpora_id = random.sample(slice,NUMBER_OF_CORPUS_ANSWERS)
         corpora_list = [qa_items[id]['Reference'] for id in corpora_id] + [answer]
         random.shuffle(corpora_list)
         corpus = ''.join(corpora_list)
