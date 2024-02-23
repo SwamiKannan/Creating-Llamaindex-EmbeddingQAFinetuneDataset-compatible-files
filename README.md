@@ -23,10 +23,11 @@ Hence, this code converts a standard dictionary (in a provided format) containin
 1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
 2. Create your json input file in the format as in create_dataset(). You can also refer to the structure below in the "Input template" section
 3. Run the following from a command prompt:
+   
    ```
    python main.py <filename>
    ```
-4. The code also prints out the number of items in your json file to confirm processing.
+5. The code also prints out the number of items in your json file to confirm processing.
    
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a> <br>
