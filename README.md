@@ -19,6 +19,16 @@ All guides (including the llamaindex documentation) create question - reference 
 </ol>
 Hence, this code converts a standard dictionary (in a provided format) containing question / answers or question / context details into a json file that can be used to finetune your embedding model using LlamaIndex's finetune library
 
+## Usage
+1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
+2. Create your json input file in the format as in create_dataset(). You can also refer to the structure below in the "Input template" section
+3. Replace <b>'qa_json.json'</b> in:
+   ```
+   if __name__ == "__main__":
+     with open('qa_json.json','r', encoding='utf-8') as fi:
+   ```
+4. Run main.py
+   
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a> <br>
  <b>Prompt: </b>cinematic film still, 4k, realistic, of a man casting spells on documents, Fujifilm XT3, long shot, ((low light:1.4)), landscape , very wide angle shot, somber, vignette, highly detailed, high budget Hollywood movie, bokeh, cinemascope, moody, epic, neon, gorgeous, film grain, grainy
