@@ -1,5 +1,6 @@
 import json
 from json_utils import create_corpus, create_json
+from argparse import ArgumentParser
 
 ####*****************ILLUSTRATIVE EXAMPLE OF INPUT FILE*****************###
     # This is only an example to show the data structure required by the create_corpus function. This section (till "ILLUSTRATIVE EXAMPLE ENDS" can be deleted or replaced by your own dict creation function)
@@ -36,7 +37,14 @@ def create_dataset():
     
 
 if __name__ == "__main__":
-    with open('qa_json.json','r', encoding='utf-8') as fi: #Name your input json file as qa_json.json or change the name pf the file in this line appropriately
+    parser = ArgumentParser()
+    parser.add_argument('filename')
+    args = parser.parse_args()
+    
+    filename = args.filename 
+
+
+    with open(filename,'r', encoding='utf-8') as fi: #Name your input json file as qa_json.json or change the name pf the file in this line appropriately
         dict_sample = json.load(fi)
     content = create_corpus(dict_sample)
     create_json(content)
