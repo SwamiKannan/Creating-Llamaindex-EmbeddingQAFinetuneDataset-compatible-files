@@ -1,15 +1,15 @@
-# Creating LlamaIndex EmbeddingQAFinetuneDataset.from_json() compatible inputs
+# Creating LlamaIndex EmbeddingQAFinetuneDataset compatible inputs
 <p align = "center">
   <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-for-Finetuning-Embeddings/blob/main/images/cover.png", width = 60%>
 </p>
 
 ## Introduction
-An important activity to improve RAG performance is to finetune the embeddings model itself to suit the domain that your RAG would capture the data of. LlamaIndex provides a robust library called llama_index.finetuning to accomplish this.
-For this library to work, we have to instantiate a EmbeddingQAFinetuneDataset object from our data. This is required in  a json file of a specific format. 
+An important lever to improve RAG performance is to finetune the embeddings model itself. The embeddings model is used to tokenize and "embed" the input text into the vecctorstore. Hence, the better your embeddings model aligns to the data and terminology of your domain, the better the RAG will be in extracting the correct documents to be passed to your LLM model. 
 
-All guides (including the llamaindex documentation) create question - reference sets from a link or html content using generate_qa_embedding_pairs(). However, <b>this is not suitable for a couple of reasons:</b>
+LlamaIndex provides a robust library called llama_index.finetuning to accomplish this.For this library to work, we have to instantiate a EmbeddingQAFinetuneDataset object from our data. One way to instantiate this object is using a JSON file in a specific format.
+
+The data in the JSON file is typically a question-answer dataset or a question-reference dataset (where the answer is not explicitly provided but the reference data in which the answer resides is provided. This is an even more powerful paradigm for RAG models since it is the basis on which they work). All guides (including the llamaindex documentation) create this data (question - reference sets from a link or html content using generate_qa_embedding_pairs() i.e. the input is a text file of all the relevant content and the LLM itself creates question-reference datasets. However, <b>this is not suitable for a couple of reasons:</b>
 <ol>
-
 <li>Generate_qa_embedding_pairs() uses an LLM to create these question - reference sets. This may be either:
   <ul>
  <li>Expensive (OpenAI or Cohere) or computationally intensive (multi-billion parameter open source models) for large amounts of content e.g. 50K pages in Wikipedia</li>
