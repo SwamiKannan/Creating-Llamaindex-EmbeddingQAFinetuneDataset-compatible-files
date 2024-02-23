@@ -22,12 +22,10 @@ Hence, this code converts a standard dictionary (in a provided format) containin
 ## Usage
 1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
 2. Create your json input file in the format as in create_dataset(). You can also refer to the structure below in the "Input template" section
-3. Replace <b>'qa_json.json'</b> in:
+3. Run the following from a command prompt:
    ```
-   if __name__ == "__main__":
-     with open('qa_json.json','r', encoding='utf-8') as fi:
+   python main.py <filename>
    ```
-4. Run main.py
    
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a> <br>
