@@ -26,6 +26,7 @@ Hence, this code converts a standard dictionary (in a provided format) containin
    ```
    python main.py <filename>
    ```
+4. The code also prints out the number of items in your json file to confirm processing.
    
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a> <br>
