@@ -4,9 +4,11 @@
 </p>
 
 ## Introduction
-An important lever to improve RAG performance is to finetune the embeddings model itself. The embeddings model is used to tokenize and "embed" the input text into the vecctorstore. Hence, the better your embeddings model aligns to the data and terminology of your domain, the better the RAG will be in extracting the correct documents to be passed to your LLM model. 
+An important lever to improve RAG performance is to finetune the embeddings model itself.
 
-LlamaIndex provides a robust library called llama_index.finetuning to accomplish this.For this library to work, we have to instantiate a EmbeddingQAFinetuneDataset object from our data. One way to instantiate this object is using a JSON file in a specific format.
+The embeddings model is used to tokenize and "embed" the input text into the vectorstore. Hence, the better your embeddings model aligns to the data and terminology of your domain, the better the RAG will be in extracting the correct documents to be passed to your LLM model. 
+
+LlamaIndex provides a robust library called <b>llama_index.finetuning</b> to accomplish this. To use this library, we have to instantiate a EmbeddingQAFinetuneDataset object from our data. One way to instantiate this object is using a JSON file in a specific format.
 
 The data in the JSON file is typically a question-answer dataset or a question-reference dataset (where the answer is not explicitly provided but the reference data in which the answer resides is provided. This is an even more powerful paradigm for RAG models since it is the basis on which they work). All guides (including the llamaindex documentation) create this data (question - reference sets from a link or html content using generate_qa_embedding_pairs() i.e. the input is a text file of all the relevant content and the LLM itself creates question-reference datasets. However, <b>this is not suitable for a couple of reasons:</b>
 <ol>
@@ -17,7 +19,7 @@ The data in the JSON file is typically a question-answer dataset or a question-r
 <li>There are several open source datasets on HuggingFace which may be both nuanced and relevant to the domain we are targetting. Not leveraging this data would be a massive opportunity loss
 </li>
 </ol>
-Hence, this code converts a standard dictionary (in a provided format) containing question / answers or question / context details into a json file that can be used to finetune your embedding model using LlamaIndex's finetune library
+Hence, this repo seeks to leverage external question-answer and question-reference datasets already available on <a href="https://huggingface.co/docs/datasets/index">Huggingface</a> or any other data. The repo takes as input,  a simple dictionary or a json file, in a pre-defined format containing question / answers or question / reference details and transforms it into a EmbeddingQAFinetuneDataset-compatible json file that can, as a downstream activity, be used to finetune your embedding model.
 
 ## Usage
 1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
