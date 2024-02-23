@@ -22,7 +22,7 @@ Hence, this code converts a standard dictionary (in a provided format) containin
 ## Usage
 1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
 2. Create your json input file in the format as in create_dataset(). You can also refer to the structure below in the "Input template" section
-3. Replace 'qa_json.json' in:
+3. Replace <b>'qa_json.json'</b> in:
    ```
    if __name__ == "__main__":
      with open('qa_json.json','r', encoding='utf-8') as fi:
