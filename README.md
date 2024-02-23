@@ -1,4 +1,4 @@
-# Creating an EmbeddingQAFinetuneDataset.from_json() compatible json file from external datasets
+# Creating LlamaIndex EmbeddingQAFinetuneDataset.from_json() compatible inputs
 <p align = "center">
   <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-for-Finetuning-Embeddings/blob/main/images/cover.png", width = 60%>
 </p>
