@@ -50,7 +50,7 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
     ```
   <br>
     where: source is the dataset link as shown below: <br>
-    ![How to get the source parameter](https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/dataset_name.PNG)
+    <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/dataset_name.PNG", align = 'center'>
   Using your own local data for finetuning</li>
 </ol>
 
