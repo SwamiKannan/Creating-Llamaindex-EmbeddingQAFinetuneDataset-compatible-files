@@ -54,7 +54,12 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
     
   ![get the dataset parameters](images/dataset_name.PNG "Get the dataset parameters")
   
-   </div>          
+   </div>
+
+   * Run the following lines of code to create and write the json file to disk
+
+           sciq_test_json.create_all_dicts()
+           sciq_test_json.write_dict()
 
 #### 2. Using your own local data for finetuning
 
