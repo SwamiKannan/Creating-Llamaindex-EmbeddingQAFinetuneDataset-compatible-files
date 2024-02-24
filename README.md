@@ -45,10 +45,12 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
           from process_data import HFJSONCreator
           hfjsonobject = HFJSONCreator(source, transform_df, split='validation', test_ratio=0, to_disk=True)
   where:<br>
-      - source is the dataset link as shown below:<br>
-      - split is the split you want ('train', 'test', 'validation', etc.) <br>
-      - test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 <br>
-      - to_disk - If you want to save the dataset to the local drive<br>
+      <ul>
+      <li> source is the dataset link as shown below: </li>
+      <li> split is the split you want ('train', 'test', 'validation', etc.) </li>
+      <li> test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 </li>
+      <li> to_disk - If you want to save the dataset to the local drive</li>
+       </ul>
       <center><sub><b> Refer to the image below for parameters 'source' and 'split' </b></sub></center><br>
   <div style="text-align: center;">
     
@@ -56,11 +58,17 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
   
    </div>
 
-   * Run the following lines of code to create and write the json file to disk
+* Run the following lines of code to create and write the json file to disk
 
            sciq_test_json.create_all_dicts()
            sciq_test_json.write_dict()
 
+* Save all this code in a file <name>.py in the src folder
+* On running this code: <br>
+      <ul>
+        <li> The final json file will be created in <b> <root>/processed_data/templated_json </b></li>
+        <li> If<b> to_disk</b> is <b>True</b>, the dataset will be saved in <b><root>/datasets </b></li>
+      </ul>
 #### 2. Using your own local data for finetuning
 
 
