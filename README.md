@@ -71,18 +71,18 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
         <li> If<b> to_disk</b> is <b>True</b>, the dataset will be saved in <b><root>/datasets </b></li>
       </ul>
 #### 2. Using your own local data for finetuning
+* Write a data loader function. This function has to load the data into a dataframe.<br>
+      e.g. if the base file is a csv, then you will have to load the data to a dataframe using pd.read_csv()<br>
+      e.g. if the base file is an Excel file, then you will have to load the data to a dataframe using pd.read_excel()<br>
+      <b> Ensure that this function returns a pandas dataframe </b>
+      
 * Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
       
           def transform_data(df):
-              df['question'] = <command to process data that gives us the text for your question>
-              df['answer'] = < command to process data that gives us the text for your response / answer / context>
-
-* Write a data loader function. This function has to load the data into a dataframe.<br>
-      e.g. if the base file is a csv, then you will have to load the data to a dataframe using pd.read_csv()
-      e.g. if the base file is an Excel file, then you will have to load the data to a dataframe using pd.read_excel()
-      <b> Ensure that this function returns a pandas dataframe </b>
-      
-* Create a HFJSONCreator object:<br>
+              df['question'] = <code to process data that gives us the text for your question>
+              df['answer'] = < code to process data that gives us the text for your response / answer / context>
+    
+* Create a LocalJSONCreator object:<br>
     
           from process_data import LocalJSONCreator
           hfjsonobject = LocalJSONCreator(data_path_name, load_data_fn, transform_data, split='train', test_ratio=0)
@@ -95,7 +95,17 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
       <li> test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 </li>
        </ul>
 
+* Run the following lines of code to create and write the json file to disk
 
+           sciq_test_json.create_all_dicts()
+           sciq_test_json.write_dict()
+
+* Save all this code in a file <name>.py in the src folder
+* On running this code: <br>
+      <ul>
+        <li> The final json file will be created in <b> <root>/processed_data/templated_json </b></li>
+        <li> If<b> to_disk</b> is <b>True</b>, the dataset will be saved in <b><root>/datasets </b></li>
+      </ul>
 
 
 ## Image credits:
