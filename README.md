@@ -39,11 +39,21 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
   ```
     def transform_data(df):
       df['question'] = <command to process data that gives us the text for your question>
-      df['answer'] = < command to process data that gives us the text for your response / answer / context'>
-  ```</li>
-  
-  <li>Using your own local data for finetuning</li>
+      df['answer'] = < command to process data that gives us the text for your response / answer / context>
+  ```
+<br>
+    * Create a HFJSONCreator object:
+    ```
+    from process_data import HFJSONCreator
+    hfjsonobject = HFJSONCreator(source, transform_df, split='validation', test_ratio=0, to_disk=True)
+    ```
+    
+    where: source is the dataset link as shown below:
+    ![How to get the source parameter](https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/dataset_name.PNG)
+  Using your own local data for finetuning</li>
 </ol>
+
+
 
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a>. Additional image editing by me. <br>
