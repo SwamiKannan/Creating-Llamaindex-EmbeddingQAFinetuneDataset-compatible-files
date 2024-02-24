@@ -31,7 +31,16 @@ Hence, this repo seeks to leverage external question-answer and question-referen
    python main.py <filename>
    ```
 5. The code also prints out the number of items in your json file to confirm processing.
-   
+
+### Addendum
+Added code to create the json file referred to in step 1 and 2 above. <b> You do not have to mandatorily use this code. Rather, you can create your own json file as per the template structure mentioned below.
+<ol>
+  <li>Using a HuggingFace dataset for finetuning</li>
+<ul>
+  
+  <li>Using your own local data for finetuning</li>
+</ol>
+
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a>. Additional image editing by me. <br>
  <b>Prompt: </b>cinematic film still, 4k, realistic, of a man casting spells on documents, Fujifilm XT3, long shot, ((low light:1.4)), landscape , very wide angle shot, somber, vignette, highly detailed, high budget Hollywood movie, bokeh, cinemascope, moody, epic, neon, gorgeous, film grain, grainy
