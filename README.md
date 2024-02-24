@@ -36,7 +36,13 @@ Hence, this repo seeks to leverage external question-answer and question-referen
 Added code to create the json file referred to in step 1 and 2 above. <b> You do not have to mandatorily use this code. Rather, you can create your own json file as per the template structure mentioned below.
 <ol>
   <li>Using a HuggingFace dataset for finetuning</li>
-<ul>
+<u
+  <li>Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:</li>
+  ```
+    def transform_data(df):
+      df['question'] = <command to process data that gives us the text for your question>
+      df['answer'] = < command to process data that gives us the text for your response / answer / context'>
+  ```</li>
   
   <li>Using your own local data for finetuning</li>
 </ol>
