@@ -33,27 +33,28 @@ Hence, this repo seeks to leverage external question-answer and question-referen
 
 ### Addendum
 Added code to create the json file referred to in step 1 and 2 above. <b> You do not have to mandatorily use this code. Rather, you can create your own json file as per the template structure mentioned below. </b>
-1. Using a HuggingFace dataset for finetuning
-   
-    * Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
+#### 1. Using a HuggingFace dataset for finetuning
+* Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
       
           def transform_data(df):
               df['question'] = <command to process data that gives us the text for your question>
               df['answer'] = < command to process data that gives us the text for your response / answer / context>
 
-    * Create a HFJSONCreator object:<br>
-          ```
+* Create a HFJSONCreator object:<br>
+    
           from process_data import HFJSONCreator
           hfjsonobject = HFJSONCreator(source, transform_df, split='validation', test_ratio=0, to_disk=True)
-          ```
-          <br>
-          where:
-             source is the dataset link as shown below:<br>
-      ![image info](./images/dataset_name.PNG) <br>
-             split is the split you want ('train', 'test', 'validation', etc.)
+  where:<br>
+      - source is the dataset link as shown below:<br>
+      - split is the split you want ('train', 'test', 'validation', etc.) <br>
+      - test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 <br>
+      - to_disk - If you want to save the dataset to the local drive<br>
+      Refer to the image below for parameters 'source' and 'split'<br>
+  ![image info](./images/dataset_name.PNG) <br>
+             
 
-2. Using your own local data for finetuning</li>
-</ol>
+#### 2. Using your own local data for finetuning
+
 
 
 
