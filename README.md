@@ -36,22 +36,23 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
 1. Using a HuggingFace dataset for finetuning
    
     * Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
-  ```
-    def transform_data(df):
-      df['question'] = <command to process data that gives us the text for your question>
-      df['answer'] = < command to process data that gives us the text for your response / answer / context>
-  ```
-  <br>
-    * Create a HFJSONCreator object:
-    
-    ```
-    from process_data import HFJSONCreator
-    hfjsonobject = HFJSONCreator(source, transform_df, split='validation', test_ratio=0, to_disk=True)
-    ```
-  <br>
-    where: source is the dataset link as shown below: <br>
-    <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/dataset_name.PNG", align = 'center'>
-  Using your own local data for finetuning</li>
+      
+          def transform_data(df):
+              df['question'] = <command to process data that gives us the text for your question>
+              df['answer'] = < command to process data that gives us the text for your response / answer / context>
+
+    * Create a HFJSONCreator object:<br>
+          ```
+          from process_data import HFJSONCreator
+          hfjsonobject = HFJSONCreator(source, transform_df, split='validation', test_ratio=0, to_disk=True)
+          ```
+          <br>
+          where:
+             source is the dataset link as shown below:<br>
+      ![image info](./images/dataset_name.PNG) <br>
+             split is the split you want ('train', 'test', 'validation', etc.)
+
+2. Using your own local data for finetuning</li>
 </ol>
 
 
