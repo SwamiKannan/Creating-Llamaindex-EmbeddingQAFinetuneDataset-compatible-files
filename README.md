@@ -49,8 +49,9 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
       - split is the split you want ('train', 'test', 'validation', etc.) <br>
       - test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 <br>
       - to_disk - If you want to save the dataset to the local drive<br>
-      Refer to the image below for parameters 'source' and 'split'<br>
-  ![image info](./images/dataset_name.PNG) <br>
+      <center><sub><b> Refer to the image below for parameters 'source' and 'split' </b></sub></center><br>
+      
+  ![get the dataset parameters](images/dataset_name.PNG) <br>
              
 
 #### 2. Using your own local data for finetuning
