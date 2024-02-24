@@ -12,7 +12,6 @@ LlamaIndex provides a robust library called <a href="https://docs.llamaindex.ai/
 
 The data in the JSON file is typically a question-answer dataset or a question-reference dataset (where the answer is not explicitly provided but the reference data in which the answer resides is provided. This is an even more powerful paradigm for RAG models since it is the basis on which they work). All guides <a href="https://docs.llamaindex.ai/en/stable/examples/finetuning/embeddings/finetune_embedding.html">(including the llamaindex documentation)</a> create this data (question - reference sets from a link or html content using generate_qa_embedding_pairs() i.e. the input is a text file of all the relevant content and the LLM itself creates question-reference datasets. <br>
 However, <b>this is not suitable for a couple of reasons:</b>
-<ol>
 <li>Generate_qa_embedding_pairs() uses an LLM to create these question - reference sets. This may be either:
   <ul>
  <li>Expensive (OpenAI or Cohere) or computationally intensive (multi-billion parameter open source models) for large amounts of content e.g. 50K pages in Wikipedia</li>
@@ -33,11 +32,10 @@ Hence, this repo seeks to leverage external question-answer and question-referen
 5. The code also prints out the number of items in your json file to confirm processing.
 
 ### Addendum
-Added code to create the json file referred to in step 1 and 2 above. <b> You do not have to mandatorily use this code. Rather, you can create your own json file as per the template structure mentioned below.
-<ol>
-  <li>Using a HuggingFace dataset for finetuning</li>
-<u
-  <li>Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:</li>
+Added code to create the json file referred to in step 1 and 2 above. <b> You do not have to mandatorily use this code. Rather, you can create your own json file as per the template structure mentioned below. </b>
+1. Using a HuggingFace dataset for finetuning
+   
+    * Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
   ```
     def transform_data(df):
       df['question'] = <command to process data that gives us the text for your question>
