@@ -47,6 +47,7 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
   where:<br>
       <ul>
       <li> source is the dataset link as shown below: </li>
+      <li> transform_fn is the name of the function defined in the step above  </li>
       <li> split is the split you want ('train', 'test', 'validation', etc.) </li>
       <li> test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 </li>
       <li> to_disk - If you want to save the dataset to the local drive</li>
@@ -70,6 +71,29 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
         <li> If<b> to_disk</b> is <b>True</b>, the dataset will be saved in <b><root>/datasets </b></li>
       </ul>
 #### 2. Using your own local data for finetuning
+* Write a transform function that will create the columns 'question' and 'answer' in your dataset (as a Pandas dataframe). Illustratively, this will look like:
+      
+          def transform_data(df):
+              df['question'] = <command to process data that gives us the text for your question>
+              df['answer'] = < command to process data that gives us the text for your response / answer / context>
+
+* Write a data loader function. This function has to load the data into a dataframe.<br>
+      e.g. if the base file is a csv, then you will have to load the data to a dataframe using pd.read_csv()
+      e.g. if the base file is an Excel file, then you will have to load the data to a dataframe using pd.read_excel()
+      <b> Ensure that this function returns a pandas dataframe </b>
+      
+* Create a HFJSONCreator object:<br>
+    
+          from process_data import LocalJSONCreator
+          hfjsonobject = LocalJSONCreator(data_path_name, load_data_fn, transform_data, split='train', test_ratio=0)
+  where:<br>
+      <ul>
+      <li> data_path_name </li>
+      <li> load_data_fn is the name of the data loader function that was created above </li>
+      <li> transform_data is the name of the function defined in the step above  </li>
+      <li> split is the split you want ('train', 'test', 'validation', etc.) </li>
+      <li> test_ratio - if you want to split the dataset into train and test, state the ratio of the test set else set to 0 </li>
+       </ul>
 
 
 
