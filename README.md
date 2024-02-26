@@ -107,6 +107,8 @@ Added code to create the json file referred to in step 1 and 2 above. <b> You do
         <li> If<b> to_disk</b> is <b>True</b>, the dataset will be saved in <b><root>/datasets </b></li>
       </ul>
 
+### JSON template
+<img src="https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/template.PNG">
 
 ## Image credits:
  <b>Image credit: </b>Base Image  for cover generated using <a href="https://www.segmind.com/models/sdxl1.0-txt2img">Segmind's Stable Diffusion XL 1.0 model</a>. Additional image editing by me. <br>
