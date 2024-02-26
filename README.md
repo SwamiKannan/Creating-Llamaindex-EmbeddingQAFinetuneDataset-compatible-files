@@ -23,7 +23,7 @@ Hence, this repo seeks to leverage external question-answer and question-referen
 
 ## Usage
 1. In the main.py file, review the create_dataset() function to understand the structure of the file that needs to be provided as an input.
-2. Create your json input file in the format as in create_dataset(). You can also refer to the structure below in the "Input template" section
+2. Create your json input file in the format as in create_dataset(). You can also refer to the <a href="https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/tree/main?tab=readme-ov-file#json-template">structure below in the "JSON template" section </a>
 3. Run the following from a command prompt:
    
    ```
