@@ -3,6 +3,9 @@
   <img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-for-Finetuning-Embeddings/blob/main/images/cover.png", width = 60%>
 </p>
 
+## Approach
+<img src = "https://github.com/SwamiKannan/Creating-Llamaindex-EmbeddingQAFinetuneDataset-compatible-files/blob/main/images/process.png" align="center>
+
 ## Introduction
 An important lever to improve RAG performance is to finetune the embeddings model itself.
 
